@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Events</title>
+</head>
+<body>
+    <h1>DOM events</h1>
+    <!--Option:1  inline -->
+    <button onclick="document.body.style.backgroundColor ='yellow' ">Inline Button</button>
+    <!--Option:2 By calling Function  -->
+    <button onclick="myFunc()">My Button</button>
+    <!--Option:3 selecting by id -->
+    <button id="purple" onclick="myPurple()">My Purple Button</button>
+
+    <!--Option:4 By adding EventLisener  -->
+    <br>
+    <button id="steelblue">My steelblue Button</button>
+
+    <!-- option: 5 Easiest & direct way to add EventListener -->
+    <button id="orange">My Orange button</button>
+    
+
+    <script>
+        function myFunc(){
+            document.body.style.backgroundColor = "black";
+            document.body.style.color = "white";
+        }
+
+        function myPurple(){
+            document.body.style.backgroundColor = "purple";
+        }
+
+        //  <!--Option:4 By adding EventLisener  -->
+
+
+        const steelBlueBtn = document.getElementById('steelblue')
+            steelBlueBtn.addEventListener('click', mySteelblue);
+
+        function mySteelblue(){
+            document.body.style.backgroundColor = "steelblue";
+
+        }
+
+        // <!-- option: 5 Easiest & direct way to add EventListener -->
+        document.getElementById('orange').addEventListener('click', function myOrange(){
+            document.body.style.backgroundColor = "orange";
+        })
+    </script>
+</body>
+</html>
