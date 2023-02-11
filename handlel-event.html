@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handel Event</title>
+</head>
+<body>
+    <h1>Handeling Events</h1>
+    <p id="default-text">I am default,before Clicked</p>
+    <button id="handler-status" onclick="myChange()">Handel Event by Onclick</button>
+    <br>
+    <hr>
+    <section class="main" style="text-align: right ;">
+        <h2 style="color: blue;">Updating Button</h2>
+       <span>Hellow <h1 id="my-text" style="display:inline-block">User Name</h1> </span>
+       <br>
+    <input type="text" id="input-field">
+    <button id="btn-id">Update Me!</button>
+    </section>
+
+    <script>
+        // option 1: changing the text of default text by clicking btn
+        document.getElementById('handler-status').addEventListener('click', function myChange(){
+            document.getElementById('default-text').innerText = "I am change as you button is Clicked";
+        })
+
+        // option 2: Just more lengthy  way than option one
+
+        const eventButton = document.getElementById('handler-status')
+        eventButton.addEventListener('click',function (){
+            document.getElementById('default-text').style.width = "200px";
+            document.getElementById('default-text').style.backgroundColor = "green";
+
+        })
+
+        // Updating Value Using addEvent listener
+
+        document.getElementById('btn-id').addEventListener('click', function(){
+            const text = document.getElementById('input-field').value
+            console.log(text);
+            document.getElementById('my-text').innerText = text;
+            document.getElementById('input-field').value = '';
+        })
+
+    </script>
+</body>
+</html>
